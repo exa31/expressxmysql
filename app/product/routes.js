@@ -16,7 +16,7 @@ router.get('/product', productsController.search);
 
 router.post('/products', upload.single('image'), productsController.store);
 
-router.put('/product/:id', productsController.update);
+router.patch('/product/:id', productsController.update);
 
 router.delete('/product/:id', productsController.destroy);
 

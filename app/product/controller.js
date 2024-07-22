@@ -103,6 +103,7 @@ const update = async (req, res) => {
                 id: req.params.id
             }
         });
+        console.log(req.body);
         return res.redirect("/tableproducts");
     } catch (error) {
         res.send(error);
