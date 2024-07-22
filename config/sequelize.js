@@ -2,9 +2,9 @@ const { Sequelize } = require('sequelize');
 const mysql2 = require('mysql2');
 
 const sequelize = new Sequelize(
-    " mysql://root:ulSrYqPnVxMZOTjetxKgzYJRhAElIDNQ@roundhouse.proxy.rlwy.net:44997/railway"
+    "mysql://root:ulSrYqPnVxMZOTjetxKgzYJRhAElIDNQ@roundhouse.proxy.rlwy.net:44997/railway"
     , {
-        dialectModule: mysql2
+        dialectModule: mysql2,
     }
 );
 
