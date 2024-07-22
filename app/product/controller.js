@@ -98,7 +98,6 @@ const update = async (req, res) => {
             price: req.body.price,
             stock: req.body.stock,
             status: req.body.status,
-            image: req.body.image,
         }, {
             where: {
                 id: req.params.id
