@@ -13,8 +13,9 @@
 </head>
 
 <body>
-    <form enctype="multipart/form-data" class="d-flex flex-column container g-4"
-        action="https://expressxmysql.vercel.app/api/v1/product/<%=product.id%>?_method=PATCH" method="post">
+    <form class="d-flex flex-column container g-4"
+        action="https://expressxmysql.vercel.app/api/v1/product/<%=product.id%>?_method=PATCH" method="post"
+        enctype="multipart/form-data">
         <label for="user_id">user-id</label>
         <input type="text" id="user_id" value="<%= product.user_id%>" name="user_id" required>
         <label for="name">Name:</label>
@@ -34,8 +35,9 @@
         </div>
         <label for="image">Image:</label>
         <input type="file" value="<%=product.image%>" id="image" name="image">
-        <input type="submit" value="Ubah product">
+        <button type="submit">Ubah product</button>
     </form>
+
 
 
 </body>

@@ -8,6 +8,14 @@ const sequelize = new Sequelize(
     }
 );
 
+// const sequelize = new Sequelize({
+//     database: 'eduworkxsequelize',
+//     host: 'localhost',
+//     username: 'root',
+//     password: 'root',
+//     dialect: 'mysql',
+// });
+
 
 (async () => { // IIFE trik untuk menjalankan pertama kali
     try {

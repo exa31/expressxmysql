@@ -33,7 +33,7 @@ const showAll = async (req, res) => {
 // control untuk menambahkan data product 
 const store = async (req, res) => {
     const { user_id, name, price, stock, status } = req.body;
-
+    console.log(req.body);
     try {
         await products.sync();
         if (req.file) {
@@ -91,19 +91,20 @@ const editProduct = async (req, res) => {
 
 // tambah fitur update data
 const update = async (req, res) => {
+    const { name, price, stock, status } = req.body;
     try {
         await products.sync();
         await products.update({
-            name: req.body.name,
-            price: req.body.price,
-            stock: req.body.stock,
-            status: req.body.status,
+            name: name,
+            price: price,
+            stock: stock,
+            status: status,
         }, {
             where: {
                 id: req.params.id
             }
         });
-        console.log(req.body);
+
         return res.redirect("/tableproducts");
     } catch (error) {
         res.send(error);
