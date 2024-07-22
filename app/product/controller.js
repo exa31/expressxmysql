@@ -33,13 +33,17 @@ const showAll = async (req, res) => {
 // control untuk menambahkan data product 
 const store = async (req, res) => {
     const { user_id, name, price, stock, status } = req.body;
+
     const target = path.join(__dirname, './../../public', req.file.originalname);
     fs.renameSync(req.file.path, target);
-    console.log(target);
     try {
         await products.sync();
         const img = `https://expressxmysql.vercel.app/${req.file.originalname}`;
-        await products.create({ user_id, name, price, stock, status, image: img });
+        if (req.file) {
+            await products.create({ user_id, name, price, stock, status, image: img });
+            return res.redirect("/tableproducts");
+        }
+        await products.create({ user_id, name, price, stock, status });
         return res.redirect("/tableproducts");
     } catch (error) {
         res.send(error);
