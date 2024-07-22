@@ -14,7 +14,7 @@
 
 <body>
     <form enctype="multipart/form-data" class="d-flex flex-column container g-4"
-        action="/api/v1/product/<%=product.id%>?_method=PUT" method="post">
+        action="https://expressxmysql.vercel.app/api/v1/product/<%=product.id%>?_method=PUT" method="post">
         <label for="user_id">user-id</label>
         <input type="text" id="user_id" value="<%= product.user_id%>" name="user_id" required>
         <label for="name">Name:</label>
