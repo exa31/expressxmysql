@@ -38,7 +38,7 @@ const store = async (req, res) => {
     console.log(target);
     try {
         await products.sync();
-        const img = `http://localhost:9000/${req.file.originalname}`;
+        const img = `https://expressxmysql.vercel.app/${req.file.originalname}`;
         await products.create({ user_id, name, price, stock, status, image: img });
         return res.redirect("/tableproducts");
     } catch (error) {

@@ -60,11 +60,9 @@
                     <td>
                         <%=product.updatedAt %>
                     </td>
-                    <td><a class="btn btn-info"
-                            href="http://localhost:9000/tableproducts/editproduct/<%=product.id %>">edit</a></td>
+                    <td><a class="btn btn-info" href="/tableproducts/editproduct/<%=product.id %>">edit</a></td>
                     <td>
-                        <form action="http://localhost:9000/api/v1/product/<%=product.id%>?_method=DELETE"
-                            method="post">
+                        <form action="/api/v1/product/<%=product.id%>?_method=DELETE" method="post">
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
                     </td>
@@ -72,7 +70,7 @@
                 <% }) %>
         </tbody>
     </table>
-    <a class="btn btn-primary" href="http://localhost:9000/tableproducts/addProduct">Add Product</a>
+    <a class="btn btn-primary" href="/tableproducts/addProduct">Add Product</a>
 
 </body>
 

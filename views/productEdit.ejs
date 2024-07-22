@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <form class="d-flex flex-column container g-4"
+    <form enctype="multipart/form-data" class="d-flex flex-column container g-4"
         action="http://localhost:9000/api/v1/product/<%=product.id%>?_method=PUT" method="post">
         <label for="user_id">user-id</label>
         <input type="text" id="user_id" value="<%= product.user_id%>" name="user_id" required>
@@ -33,17 +33,11 @@
             <label for="statusF">Not Ready</label>
         </div>
         <label for="image">Image:</label>
-        <input type="text" value="<%=product.image%>" id="image" name="image" required>
+        <input type="file" value="<%=product.image%>" id="image" name="image">
         <input type="submit" value="Ubah product">
     </form>
 
-    <script>
-        const form = document.querySelector('form');
-        form.addEventListener('submit', async (e) => {
-            // e.preventDefault();
-            console.log(e.target.status.value);
-        });
-    </script>
+
 </body>
 
 </html>
