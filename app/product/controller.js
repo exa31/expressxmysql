@@ -36,8 +36,8 @@ const store = async (req, res) => {
 
     try {
         await products.sync();
-        const img = `https://expressxmysql.vercel.app/${req.file.originalname}`;
         if (req.file) {
+            const img = `https://expressxmysql.vercel.app/${req.file.originalname}`;
             const target = path.join(__dirname, './../../public', req.file.originalname);
             fs.renameSync(req.file.path, target);
             await products.create({ user_id, name, price, stock, status, image: img });
