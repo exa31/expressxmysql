@@ -34,12 +34,12 @@ const showAll = async (req, res) => {
 const store = async (req, res) => {
     const { user_id, name, price, stock, status } = req.body;
 
-    const target = path.join(__dirname, './../../public', req.file.originalname);
-    fs.renameSync(req.file.path, target);
     try {
         await products.sync();
         const img = `https://expressxmysql.vercel.app/${req.file.originalname}`;
         if (req.file) {
+            const target = path.join(__dirname, './../../public', req.file.originalname);
+            fs.renameSync(req.file.path, target);
             await products.create({ user_id, name, price, stock, status, image: img });
             return res.redirect("/tableproducts");
         }
