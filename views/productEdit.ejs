@@ -13,8 +13,7 @@
 </head>
 
 <body>
-    <form class="d-flex flex-column container g-4"
-        action="https://expressxmysql.vercel.app/api/v1/product/<%=product.id%>?_method=PATCH" method="post"
+    <form class="d-flex flex-column container g-4" action="/api/v1/product/<%=product.id%>?_method=PATCH" method="post"
         enctype="multipart/form-data">
         <label for="user_id">user-id</label>
         <input type="text" id="user_id" value="<%= product.user_id%>" name="user_id" required>
