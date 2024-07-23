@@ -91,10 +91,11 @@ const editProduct = async (req, res) => {
 
 // tambah fitur update data
 const update = async (req, res) => {
-    const { name, price, stock, status } = req.body;
+    const { user_id, name, price, stock, status } = req.body;
     try {
         await products.sync();
         await products.update({
+            user_id: user_id,
             name: name,
             price: price,
             stock: stock,
